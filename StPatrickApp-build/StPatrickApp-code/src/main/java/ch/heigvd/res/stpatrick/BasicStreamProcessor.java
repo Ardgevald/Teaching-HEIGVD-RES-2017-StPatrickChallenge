@@ -3,6 +3,8 @@ package ch.heigvd.res.stpatrick;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.Writer;
 
@@ -24,9 +26,12 @@ class BasicStreamProcessor implements IStreamProcessor {
   public void process(Reader in, Writer out) throws IOException {
     BufferedReader br = new BufferedReader(in);
     BufferedWriter bw = new BufferedWriter(out);
+    
     int c = br.read();
+    bw.write(c);
     while (c != -1) {
       c = br.read();
+      bw.write(c);
     }
     bw.flush();
   }
