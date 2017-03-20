@@ -1,14 +1,11 @@
 package ch.heigvd.res.stpatrick;
 
-import java.io.Reader;
-import java.io.Writer;
-
 /**
  * This class is responsible for providing different types of Stream Processors.
  * 
  * @author Olivier Liechti
  */
-public class StreamProcessorsFactory implements IStreamProcessorsFactory, IStreamDecoratorController {
+public class StreamProcessorsFactory implements IStreamProcessorsFactory {
 
   @Override
   public IStreamProcessor getProcessor() {
@@ -22,15 +19,5 @@ public class StreamProcessorsFactory implements IStreamProcessorsFactory, IStrea
     }
     throw new UnknownNameException("The factory does not know any processor called " + processorName);
   }
-
-   @Override
-   public Reader decorateReader(Reader inputReader) {
-      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   }
-
-   @Override
-   public Writer decorateWriter(Writer outputWriter) {
-      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   }
 
 }
